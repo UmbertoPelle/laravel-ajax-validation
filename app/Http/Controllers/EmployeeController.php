@@ -8,7 +8,6 @@ use App\Employee;
 class EmployeeController extends Controller{
 
   public function index(){
-
     return view('emp-index');
   }
 }
