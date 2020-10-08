@@ -16,7 +16,10 @@ class EmployeeController extends Controller{
   }
 
   public function store(Request $request){
-    $data = $request -> all();
+    $data = $request -> validate([
+        'firstname' => 'required|min:3|max:10',
+        'lastname' => 'required|min:3|max:10',
+    ]);
     $emp = Employee::create($data);
 
     return redirect() -> route('emp-index');
